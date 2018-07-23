@@ -1,2 +1,9 @@
-local master origin/master  develop origin/develop
+1. create local repo
+2. publish to remote
+3. start a new branch develop 
+4. start a new branch release
+5. start a new branch feature/xxoo
+
+
+
 
