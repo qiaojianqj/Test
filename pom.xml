@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.jiguang</groupId>
+        <artifactId>anti-deception-parent</artifactId>
+        <version>3.30.0-SNAPSHOT</version>
+        <relativePath>../anti-deception-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>anti-deception-third</artifactId>
+
+    <dependencies>
+        <!-- 本项目 -->
+        <dependency>
+            <groupId>cn.jiguang</groupId>
+            <artifactId>anti-deception-mvc</artifactId>
+        </dependency>
+        <!-- 第二方 -->
+        <dependency>
+            <groupId>cn.jpush</groupId>
+            <artifactId>jcache-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.jiguang.dp</groupId>
+            <artifactId>dp-ods-client</artifactId>
+            <version>2.3.1-shade-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.jiguang.iapp</groupId>
+            <artifactId>iapp-data-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.jiguang.user-privacy</groupId>
+            <artifactId>user-privacy-client</artifactId>
+        </dependency>
+        <!-- 第三方 -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao</groupId>
+            <artifactId>taobao</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/taobao-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.jiguang</groupId>
+            <artifactId>anti-deception-external-client</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>cn.jiguang.anti.deception.third.AntiDeceptionThirdApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>repo</id>
+            <name>repo</name>
+            <url>http://maven.jpushoa.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>plugin-repo</id>
+            <name>plugin-repo</name>
+            <url>http://maven.jpushoa.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
